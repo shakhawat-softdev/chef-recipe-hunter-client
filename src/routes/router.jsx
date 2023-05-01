@@ -1,5 +1,5 @@
-const { createBrowserRouter } = require("react-router-dom");
-const { default: Main } = require("../layouts/Main");
+import { createBrowserRouter } from "react-router-dom";
+import Main from "../layouts/Main";
 
 const router = createBrowserRouter([
    {
