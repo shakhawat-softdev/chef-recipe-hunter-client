@@ -2,18 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+
+
    return (
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">Chef Mster</a>
+            <a className="btn btn-ghost normal-case text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
-               <Link to='/'> <li><a>Home</a></li></Link>
-               <Link to='/'> <li><a>Blog</a></li></Link>
-               <Link to='/login'> <li><a>Login</a></li></Link>
-               <Link to='/register'> <li><a>Registerr</a></li></Link>
-               <Link to='/'> <li><a>Logout</a></li></Link>
+               <Link to='/' className='btn'> Home</Link>
+               <Link to='/' className='btn'> Blog</Link>
+               <Link to='/login' className='btn'> Login</Link>
+               <Link to='/register' className='btn'> Registerr</Link>
+               <Link to='/' className='btn'>Logout</Link>
 
                <li tabIndex={0}>
                   <a>
