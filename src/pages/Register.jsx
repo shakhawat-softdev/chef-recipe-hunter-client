@@ -20,7 +20,6 @@ const Register = () => {
          .then(result => {
             const loggedUser = result.user;
             setMessage('Registation Sussessful')
-
             console.log(loggedUser);
          })
          .catch(error => {

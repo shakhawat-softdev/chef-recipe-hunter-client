@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
+   const [message, setMessage] = useState('');
+   const { sinInUser } = useContext(AuthContext);
 
    const handleLogin = event => {
       event.preventDefault();
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+
+      sinInUser(email, password)
+         .then(resut => {
+            const loggedUser = resut.user;
+            setMessage('Login successful!');
+            console.log(loggedUser);
+         })
    }
 
 
@@ -31,7 +40,7 @@ const Login = () => {
                         </label>
                         <input type="password" name='password' placeholder="password" className="input input-bordered" />
                         <label className="label">
-                           <span className="label-text-alt">Error message</span>
+                           <span className="label-text-alt">{message}</span>
                         </label>
                      </div>
                      <div className="form-control mt-3">
