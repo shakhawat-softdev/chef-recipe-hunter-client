@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
+   const { user, logout } = useContext(AuthContext);
+   const [userInfo, setUserInfo] = useState(null);
+
+   useEffect(() => {
+      setUserInfo(user)
+   }, [user])
+
+
+
+
+   // console.log(userInfo);
+
+   const handleLogout = () => {
+      logout()
+         .then(result => { })
+         .catch()
+   }
 
 
 
@@ -14,9 +32,9 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">
                <Link to='/' className='btn'> Home</Link>
                <Link to='/' className='btn'> Blog</Link>
-               <Link to='/login' className='btn'> Login</Link>
-               <Link to='/register' className='btn'> Registerr</Link>
-               <Link to='/' className='btn'>Logout</Link>
+               {user ? <Link to='/' className='btn' onClick={handleLogout} >Logout</Link> : <Link to='/login' className='btn'> Login</Link>}
+
+
 
                <li tabIndex={0}>
                   <a>
@@ -27,7 +45,7 @@ const Navbar = () => {
                      </label>
                   </a>
                   <ul className="p-2 bg-base-100">
-                     <li><a>User Name</a></li>
+                     <li><a>{user && user.email}</a></li>
                   </ul>
                </li>
             </ul>

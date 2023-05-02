@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Button, Checkbox, Form, Input, } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
    const { registerUser } = useContext(AuthContext);
-   const [message, setMessage] = useState('')
+   const [message, setMessage] = useState('');
+
 
 
    const handleRegister = event => {
@@ -20,7 +21,8 @@ const Register = () => {
          .then(result => {
             const loggedUser = result.user;
             setMessage('Registation Sussessful')
-            console.log(loggedUser);
+
+
          })
          .catch(error => {
             console.error(error.massage)

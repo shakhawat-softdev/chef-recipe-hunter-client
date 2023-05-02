@@ -6,23 +6,26 @@ import app from '../firebase/firebase.config';
 
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app)
+const auth = getAuth(app);
+
 
 const AuthProvider = ({ children }) => {
    const [user, setUser] = useState(null);
+   const [loader, setLoader] = useState(true)
 
    const registerUser = (email, password) => {
+      setLoader(true)
       return createUserWithEmailAndPassword(auth, email, password);
    };
 
    const sinInUser = (email, password) => {
+      setLoader(true)
       return signInWithEmailAndPassword(auth, email, password)
    };
 
    const logout = () => {
-      signOut(auth)
-         .then(result => { })
-         .catch()
+      setLoader(true)
+      return signOut(auth);
    }
 
    // CurrentlysignInuser
@@ -33,10 +36,11 @@ const AuthProvider = ({ children }) => {
       });
       return () => {
          unsubscribe();
+         setLoader(false)
       }
    }, [])
 
-   const authInfo = { user, registerUser, sinInUser, user, logout }
+   const authInfo = { user, registerUser, sinInUser, user, logout, loader }
    return (
       <AuthContext.Provider value={authInfo}>
          {children}
