@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
    const [message, setMessage] = useState('');
-   const { sinInUser } = useContext(AuthContext);
+   const { sinInUser, signInGoogle } = useContext(AuthContext);
    const navigate = useNavigate()
 
    const handleLogin = event => {
@@ -16,17 +16,25 @@ const Login = () => {
 
       sinInUser(email, password)
          .then(resut => {
-            const loggedUser = resut.user;
+            // const loggedUser = resut.user;
             setMessage('Login successful!');
             navigate('/')
+         })
+   };
 
+   const handleGoogleLogin = () => {
+      signInGoogle()
+         .then(result => {
+            const loggedUser = result.user;
+            setMessage('Login successful!');
+            navigate('/');
+            console.log(loggedUser);
+         })
+         .catch(error => {
+            setMessage(error.massage)
+            console.error(error.massage)
          })
    }
-
-
-
-
-
 
    return (
       <>
@@ -57,7 +65,8 @@ const Login = () => {
                         <p className='label-text-alt'>Haven't account? Please <Link to='/register'><span className="label-text-alt link link-hover">register</span></Link>
                         </p>
                      </label>
-                     <button className="btn btn-ghost btn-success">Login with Google</button>
+                     <button className="btn btn-ghost btn-success" onClick={handleGoogleLogin}>Login with Google</button>
+
                      <button className="btn btn-ghost btn-success">Login with Github</button>
                   </div>
                </form>

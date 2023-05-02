@@ -4,14 +4,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
    const { user, logout } = useContext(AuthContext);
-   const [userInfo, setUserInfo] = useState(null);
-
-   useEffect(() => {
-      setUserInfo(user)
-   }, [user])
-
-
-
 
    // console.log(userInfo);
 
@@ -40,12 +32,12 @@ const Navbar = () => {
                   <a>
                      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                           <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                           <img src={user && user.photoURL} />
                         </div>
                      </label>
                   </a>
                   <ul className="p-2 bg-base-100">
-                     <li><a>{user && user.email}</a></li>
+                     <li><a>{user && user.displayName}</a></li>
                   </ul>
                </li>
             </ul>

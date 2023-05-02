@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Checkbox, Form, Input, } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
