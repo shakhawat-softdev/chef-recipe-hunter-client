@@ -10,9 +10,11 @@ const Navbar = () => {
          <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
                <Link to='/'> <li><a>Home</a></li></Link>
-               <li><a>Blog</a></li>
-               <li><a>Login</a></li>
-               <li><a>Logout</a></li>
+               <Link to='/'> <li><a>Blog</a></li></Link>
+               <Link to='/login'> <li><a>Login</a></li></Link>
+               <Link to='/register'> <li><a>Registerr</a></li></Link>
+               <Link to='/'> <li><a>Logout</a></li></Link>
+
                <li tabIndex={0}>
                   <a>
                      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
