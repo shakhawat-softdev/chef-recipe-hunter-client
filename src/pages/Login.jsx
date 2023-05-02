@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
    const [message, setMessage] = useState('');
-   const { sinInUser, signInGoogle } = useContext(AuthContext);
+   const { sinInUser, signInGoogle, signInGithub } = useContext(AuthContext);
    const navigate = useNavigate()
 
    const handleLogin = event => {
@@ -28,13 +28,28 @@ const Login = () => {
             const loggedUser = result.user;
             setMessage('Login successful!');
             navigate('/');
+
+            // console.log(loggedUser);
+         })
+         .catch(error => {
+            setMessage(error.massage);
+            console.error(error.massage);
+         })
+   };
+
+   const handleGithubLogin = () => {
+      signInGithub()
+         .then(result => {
+            const loggedUser = result.user;
+            setMessage('Login successful!');
+            navigate('/');
             console.log(loggedUser);
          })
          .catch(error => {
             setMessage(error.massage)
             console.error(error.massage)
          })
-   }
+   };
 
    return (
       <>
@@ -67,7 +82,7 @@ const Login = () => {
                      </label>
                      <button className="btn btn-ghost btn-success" onClick={handleGoogleLogin}>Login with Google</button>
 
-                     <button className="btn btn-ghost btn-success">Login with Github</button>
+                     <button className="btn btn-ghost btn-success" onClick={handleGithubLogin} >Login with Github</button>
                   </div>
                </form>
             </div>
