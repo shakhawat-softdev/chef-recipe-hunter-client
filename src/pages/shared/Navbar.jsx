@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
 
 
+
    return (
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">

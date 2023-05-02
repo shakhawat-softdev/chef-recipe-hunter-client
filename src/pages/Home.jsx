@@ -17,12 +17,12 @@ const Home = () => {
             {/* <div style={{ backgroundImage: `url(${banner1})`, height: '500px' }} >
                <h1 className='text-7xl text-white  text-center '><span className="font-thin">Meat</span> <span>Chiken</span></h1>
             </div> */}
-            <div class="hero min-h-screen" style={{ backgroundImage: `url(${banner1})`, height: '500px' }}>
-               <div class="hero-overlay bg-opacity-60"></div>
-               <div class="hero-content text-center text-neutral-content">
-                  <div class="max-w-md">
-                     <h1 class="mb-5 text-5xl font-bold">Meat Chiken</h1>
-                     <p class="mb-5">Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</p>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner1})`, height: '500px' }}>
+               <div className="hero-overlay bg-opacity-60"></div>
+               <div className="hero-content text-center text-neutral-content">
+                  <div className="max-w-md">
+                     <h1 className="mb-5 text-5xl font-bold">Meat Chiken</h1>
+                     <p className="mb-5">Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</p>
                      {/* <button class="btn btn-primary">Get Started</button> */}
                   </div>
                </div>
