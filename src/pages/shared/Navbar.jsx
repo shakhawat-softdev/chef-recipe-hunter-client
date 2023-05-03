@@ -26,9 +26,7 @@ const Navbar = () => {
                <Link to='/' className='btn'> Blog</Link>
                {user ? <Link to='/' className='btn' onClick={handleLogout} >Logout</Link> : <Link to='/login' className='btn'> Login</Link>}
 
-
-
-               <li tabIndex={0}>
+               {user && <> <li tabIndex={0}>
                   <a>
                      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
@@ -36,10 +34,14 @@ const Navbar = () => {
                         </div>
                      </label>
                   </a>
+
                   <ul className="p-2 bg-base-100">
                      <li><a>{user && user.displayName}</a></li>
                   </ul>
                </li>
+
+               </>}
+
             </ul>
          </div>
       </div>
