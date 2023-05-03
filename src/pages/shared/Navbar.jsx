@@ -13,8 +13,6 @@ const Navbar = () => {
          .catch()
    }
 
-
-
    return (
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
@@ -23,7 +21,7 @@ const Navbar = () => {
          <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
                <Link to='/' className='btn'> Home</Link>
-               <Link to='/' className='btn'> Blog</Link>
+               <Link to='/blog' className='btn'> Blog</Link>
                {user ? <Link to='/' className='btn' onClick={handleLogout} >Logout</Link> : <Link to='/login' className='btn'> Login</Link>}
 
                {user && <> <li tabIndex={0}>
