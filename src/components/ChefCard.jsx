@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Space } from 'antd';
-import banner from '../../public/images/banner.jpg'
+import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -12,9 +12,13 @@ const ChefCard = ({ chef }) => {
 
    return (
 
-      <div className="card w-3/4 bg-base-100 shadow-xl mx-auto my-5">
+      <div className="card w-3/4 bg-base-100 shadow-md border  mx-auto my-5">
          <figure className="px-10 pt-10">
-            <img src={chefImg} />
+            <LazyLoad height={300} offset={300}>
+               <img src={chefImg} />
+            </LazyLoad>
+
+            {/* <img src={chefImg} /> */}
          </figure>
          <div className="card-body">
             <h2 className="card-title">{chefName} </h2>
