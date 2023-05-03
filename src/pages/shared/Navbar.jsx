@@ -14,14 +14,12 @@ const Navbar = () => {
    }
 
    return (
-
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
             <a className="btn btn-ghost normal-case text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
-               {/* <NavLink to='/' className={({ isActive }) => (isActive ? 'text-blue-600' : '')} > Books </NavLink> */}
 
                <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Home</NavLink>
                <NavLink to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Blog</NavLink>

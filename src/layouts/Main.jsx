@@ -9,12 +9,12 @@ const Main = () => {
    const navigation = useNavigation()
 
    return (
-      <div className='m-auto'>
+      <>
          <Navbar />
-         <div className='text-center my-20'>{navigation.state === 'loading' && <Ring />}</div>
+         <div className='text-center'>{navigation.state === 'loading' && <Ring />}</div>
          <Outlet />
          <Footer />
-      </div>
+      </>
    );
 };
 
