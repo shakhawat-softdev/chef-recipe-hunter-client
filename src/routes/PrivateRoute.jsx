@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { Ring } from 'react-spinners-css';
+
 
 const PrivateRoute = ({ children }) => {
    const { user, loader } = useContext(AuthContext);
@@ -8,7 +10,7 @@ const PrivateRoute = ({ children }) => {
    // console.log(location);
 
    if (loader) {
-      return <p>Loading.........</p>
+      return <p className='text-center my-20'><Ring /></p>
    }
 
    if (user) {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
@@ -14,15 +14,18 @@ const Navbar = () => {
    }
 
    return (
+
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
             <a className="btn btn-ghost normal-case text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
-               <Link to='/' className='btn'> Home</Link>
-               <Link to='/blog' className='btn'> Blog</Link>
-               {user ? <Link to='/' className='btn' onClick={handleLogout} >Logout</Link> : <Link to='/login' className='btn'> Login</Link>}
+               {/* <NavLink to='/' className={({ isActive }) => (isActive ? 'text-blue-600' : '')} > Books </NavLink> */}
+
+               <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Home</NavLink>
+               <NavLink to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Blog</NavLink>
+               {user ? <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')} onClick={handleLogout} >Logout</NavLink> : <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Login</NavLink>}
 
                {user && <> <li tabIndex={0}>
                   <a>

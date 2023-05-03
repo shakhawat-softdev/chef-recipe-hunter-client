@@ -6,17 +6,20 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../pages/Blog";
+import ErrorPage from "../pages/ErrorPage";
 
 
 const router = createBrowserRouter([
    {
       path: '/',
       element: <Main />,
+      errorElement: <ErrorPage />,
       children: [
 
          {
             path: '/',
             element: <Home />,
+
             loader: () => fetch('http://localhost:5000/chefs')
          },
          {

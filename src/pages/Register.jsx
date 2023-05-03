@@ -16,11 +16,16 @@ const Register = () => {
       const password = form.password.value;
       const photoUrl = form.photoUrl.value;
 
+
+
+      if (password.length < 6) {
+         setMessage('Please enter Password minimum six character')
+      }
+
       registerUser(email, password)
          .then(result => {
             const loggedUser = result.user;
             setMessage('Registation Sussessful')
-
 
          })
          .catch(error => {
