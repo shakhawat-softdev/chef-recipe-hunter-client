@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
    return (
-      <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 flex flex-col gap-5'>
+      <div className='px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 flex flex-col gap-5'>
          <div>
             <h1 className='font-bold text-xl'> 1. Differences between uncontrolled and controlled components</h1>
             <p><span className='font-bold'>ANS:</span> In the context of React, controlled and uncontrolled components refer to the way data is managed within the components.</p>

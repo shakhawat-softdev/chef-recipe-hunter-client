@@ -20,8 +20,14 @@ const Login = () => {
          .then(resut => {
             // const loggedUser = resut.user;
             setMessage('Login successful!');
-            navigate(from)
+            navigate(from);
+            setMessage('');
          })
+         .catch(error => {
+            setMessage(error.message)
+            console.error(error.message)
+         })
+
    };
 
    const handleGoogleLogin = () => {
@@ -29,13 +35,13 @@ const Login = () => {
          .then(result => {
             const loggedUser = result.user;
             setMessage('Login successful!');
-            navigate(from)
-
-
+            navigate(from);
+            message('');
+            console.log(loggedUser);
          })
          .catch(error => {
-            setMessage(error.massage);
-            console.error(error.massage);
+            setMessage(error.message);
+            console.error(error.message);
          })
    };
 
@@ -46,10 +52,11 @@ const Login = () => {
             setMessage('Login successful!');
             navigate(from)
             console.log(loggedUser);
+            message('')
          })
          .catch(error => {
-            setMessage(error.massage)
-            console.error(error.massage)
+            setMessage(error.message)
+            console.error(error.message)
          })
    };
 
@@ -64,13 +71,13 @@ const Login = () => {
                         <label className="label">
                            <span className="label-text">Email</span>
                         </label>
-                        <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                        <input type="text" name='email' required placeholder="email" className="input input-bordered" />
                      </div>
                      <div className="form-control">
                         <label className="label">
                            <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                        <input type="password" name='password' required placeholder="password" className="input input-bordered" />
                         <label className="label">
                            <span className="label-text-alt">{message}</span>
                         </label>
@@ -82,9 +89,9 @@ const Login = () => {
                         <p className='label-text-alt'>Haven't account? Please <Link to='/register'><span className="label-text-alt link link-hover">register</span></Link>
                         </p>
                      </label>
-                     <button className="btn btn-ghost btn-success" onClick={handleGoogleLogin}>Login with Google</button>
+                     <button className="btn btn-active btn-success" onClick={handleGoogleLogin}>Login with Google</button>
 
-                     <button className="btn btn-ghost btn-success" onClick={handleGithubLogin} >Login with Github</button>
+                     <button className="btn btn-active btn-success" onClick={handleGithubLogin} >Login with Github</button>
                   </div>
                </form>
             </div>

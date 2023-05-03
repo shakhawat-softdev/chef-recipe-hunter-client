@@ -1,36 +1,58 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-   const { registerUser } = useContext(AuthContext);
+   const { registerUser, logout } = useContext(AuthContext);
    const [message, setMessage] = useState('');
+   const navigate = useNavigate()
+
+   // console.log(updateProfileInfo)
 
 
 
    const handleRegister = event => {
       event.preventDefault();
       const form = event.target;
-      const name = form.name.value;
+      const userName = form.name.value;
       const email = form.email.value;
       const password = form.password.value;
-      const photoUrl = form.photoUrl.value;
-
-
+      const imageUrl = `${form.photoUrl.value}`
 
       if (password.length < 6) {
          setMessage('Please enter Password minimum six character')
-      }
+      };
 
       registerUser(email, password)
+
          .then(result => {
             const loggedUser = result.user;
             setMessage('Registation Sussessful')
+            updeteUserProfile(loggedUser, userName, imageUrl)
+
+            logout();
+            navigate('/login')
 
          })
+
          .catch(error => {
-            console.error(error.massage)
+            console.error(error.message)
+            setMessage(error.message)
          })
+
+
+      const updeteUserProfile = (loggedUser, userName, imageUrl) => {
+         updateProfile(loggedUser, {
+            displayName: userName, photoURL: imageUrl
+         })
+            .then(() => {
+               console.log('user name updated');
+            })
+            .catch(error => console.error(error.message))
+      }
+
+
 
    }
    return (
