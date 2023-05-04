@@ -14,22 +14,10 @@ const Navbar = () => {
    return (
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">Chef Master</a>
+            <a className="btn btn-ghost normal-case text-md lg:text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 flex justify-center items-center mx-2">
-
-               <NavLink
-                  to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
-               >
-                  Home
-               </NavLink>
-               <NavLink
-                  to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
-               >
-                  Blog
-               </NavLink>
-
+            <ul className="menu menu-horizontal px-1 flex justify-center items-center gap-2">
                {user &&
                   <> <li tabIndex={0}>
                      <a>
@@ -40,11 +28,24 @@ const Navbar = () => {
                         </label>
                      </a>
 
-                     <ul className=" text-sm bg-base-100">
-                        <li><a><small>{user && user.displayName}</small></a></li>
+                     <ul className="text-sm bg-base-100 ">
+                        <li className=''><a><small>{user && user.displayName}</small></a></li>
                      </ul>
                   </li>
                   </>}
+
+               <NavLink
+                  to='/' className={({ isActive }) => (isActive ? 'btn btn-error" text-yellow-500' : 'btn')}
+               >
+                  Home
+               </NavLink>
+               <NavLink
+                  to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
+               >
+                  Blog
+               </NavLink>
+
+
 
                {user ? <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')} onClick={handleLogout} >Logout</NavLink> :
                   <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Login</NavLink>}

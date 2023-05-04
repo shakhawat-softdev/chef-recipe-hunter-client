@@ -42,32 +42,32 @@ const AllRecipesCookingMethod = ({ chef }) => {
 
          <div className="card  bg-base-100 shadow-xl">
             <div className="card-body">
-               <p className='font-bold'>Total Recepi: {recipes.length} </p>
-               <div className="card-title bg-slate-300 p-4 rounded-md">All Recepi: {recipes.map((recepi, index) => <p key={index}><small>{recepi.name}</small></p>)} </div>
+               <p className='font-bold'>Total Recipes: {recipes.length} </p>
+               <div className="card-title bg-slate-300 p-4 rounded-md">All Recipes: {recipes.map((recepi, index) => <p key={index}><small>{recepi.name}</small></p>)} </div>
 
                <div className='grid grid-cols-3 gap-3'>
                   <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline '>1. Recepi name:</h1> {recepiName1} </div>
+                     <div className='mb-3'> <h1 className='font-bold inline '>1. Recipe name:</h1> {recepiName1} </div>
                      <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient1.map(procedure => procedure)} </div>
                   </div>
 
                   <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3' > <h1 className='font-bold inline'>2. Recepi name:</h1> {recepiName2} </div>
+                     <div className='mb-3' > <h1 className='font-bold inline'>2. Recipe name:</h1> {recepiName2} </div>
                      <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient2.map(procedure => procedure)} </div>
                   </div>
 
                   <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>3. Recepi name:</h1> {recepiName3} </div>
+                     <div className='mb-3'> <h1 className='font-bold inline'>3. Recipe name:</h1> {recepiName3} </div>
                      <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient3.map(procedure => procedure)} </div>
                   </div>
 
                   <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recepi name:</h1> {recepiName4} </div>
+                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recipe name:</h1> {recepiName4} </div>
                      <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient4.map(procedure => procedure)} </div>
                   </div>
 
                   <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recepi name:</h1> {recepiName5} </div>
+                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recipes name:</h1> {recepiName5} </div>
                      <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient5.map(procedure => procedure)} </div>
                   </div>
                </div>

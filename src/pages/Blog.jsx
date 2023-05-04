@@ -1,5 +1,6 @@
 import React from 'react';
 import Pdf from "react-to-pdf";
+import { BsFiletypePdf } from "react-icons/bs";
 
 
 const ref = React.createRef();
@@ -15,9 +16,9 @@ const Blog = () => {
 
    return (
       < >
-         <div className='text-end'>
+         <div className='text-end px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 flex justify-end gap-5'>
             <Pdf targetRef={ref} filename="code-example.pdf">
-               {({ toPdf }) => <button className="btn btn-wide" onClick={toPdf}>Download Pdf</button>}
+               {({ toPdf }) => <button className="btn btn-secondary btn-sm w-1/6 text-end" onClick={toPdf}><BsFiletypePdf text-4xl mr-2 /> Download Pdf</button>}
             </Pdf>
          </div>
          <div ref={ref}>

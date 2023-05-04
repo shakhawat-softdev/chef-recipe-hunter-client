@@ -30,21 +30,23 @@ const Home = () => {
          {/* Section-1 Banner-1 End*/}
          <hr />
          {/* Section-2 Banner-2 Start*/}
-         <section>
-            {/* <h1 className='text-center text-2xl bg-stone-100 my-5 p-5 rounded-md '>Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</h1> */}
-            <div className='w-full lg:flex'>
+         <section className='flex flex-col justify-center items-center'>
+            <div className='w-full lg:flex flex flex-col justify-center items-center'>
                <div className='w-1/2'>
                   <img className='h-5/6' src={banner3} alt="" />
                </div>
                <div className='w-1/2'>
                   <div className="card bg-base-100 ">
-                     <div className="card-body items-center text-center">
+                     <div className="card-body lg:items-center text-center">
+
                         <div className="card-title "><h1 className='text-3xl' ><span >Our Chef</span> <span className='font-bold'>Specialties</span></h1></div>
+
                         <p className='mt-4'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></p>
                      </div>
                      <hr className='border ' />
                   </div>
-                  <div className='flex gap-2 mt-5 justify-center items-center'>
+
+                  <div className='flex flex-col lg:flex-row gap-2 mt-5 justify-center items-center '>
                      <div className='card shadow-md border border-red-300'>
                         <div className='card-body '>
                            <h2 className='card-title'>Tacos  </h2>
@@ -74,7 +76,7 @@ const Home = () => {
             </div>
          </section>
 
-         <Space wrap className='flex justify-center items-start'>
+         <Space wrap className='flex justify-center items-start mx-1 mt-4'>
             <Button type="primary" danger>All</Button>
             <Button danger>Fish</Button>
             <Button danger>Meat</Button>
@@ -96,7 +98,8 @@ const Home = () => {
 
          <section>
             <h1 className='text-center text-2xl bg-slate-200 text-black my-5 p-5 rounded-md '>Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</h1>
-            <div className='w-full lg:flex gap-10'>
+
+            <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-10'>
                <div className='w-1/2'>
                   <div className="card bg-base-100 ">
                      <div className="card-body items-center text-center">
@@ -106,7 +109,7 @@ const Home = () => {
                      </div>
                      <div className="divider"></div>
                   </div>
-                  <div className='flex gap-2 w-full mt-5 justify-center items-center'>
+                  <div className='flex flex-col lg:flex-row gap-2 w-full mt-5 justify-center items-center'>
                      <div className='card shadow-lg'>
                         <div className='card-body '>
                            <h2 className='card-title'>Date Night Package </h2>
