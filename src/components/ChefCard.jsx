@@ -12,7 +12,7 @@ const ChefCard = ({ chef }) => {
 
    return (
 
-      <div className="card w-3/4 bg-base-100 shadow-md border  mx-auto my-5">
+      <div className="card w-46  bg-base-100 shadow-md border">
          <figure className="px-10 pt-10">
             <LazyLoad height={300} offset={300}>
                <img src={chefImg} />
@@ -41,20 +41,7 @@ const ChefCard = ({ chef }) => {
       </div>
 
 
-      // <div className="card w-96 bg-base-100 shadow-xl">
-      //    <figure className="px-10 pt-10">
-      //       <img src={chefImg} />
-      //    </figure>
-      //    <div className="card-body">
-      //       <h2 className="card-title">{chefName} </h2>
-      //       <p>Years of experience: {experience} </p>
-      //       <p>Numbers of recipes: {numberOfRecipe} </p>
-      //       <p>Likes: {totalLikes} </p>
-      //       <div className="card-actions justify-end">
-      //          <button className="btn btn-primary">Buy Now</button>
-      //       </div>
-      //    </div>
-      // </div>
+
 
    );
 };

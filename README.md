@@ -7,5 +7,7 @@
 * For the website i created fake data through CHAT GPT and image collect from free resource.
 * In this website There is multiple page i  have created l.e Home, Details, Login, Register and Blog. The chef details page is protect by private route, only authorize user will be see this page.
 * For icon i have user hero-icon 
-* Client Side LinK: https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-syedarafatcse
-* Server Side Link: 
+
+* Live Project lInk: https://chef-recipe-hunter-clien-ef342.web.app
+* Server Link: https://chef-recipe-hunter-server-side-syedarafatcse.vercel.app/
+* Repository Link: https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-syedarafatcse

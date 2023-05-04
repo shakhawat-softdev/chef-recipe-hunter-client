@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
-   const { user, logout } = useContext(AuthContext);
-
-   // console.log(userInfo);
+   const { user, logout } = useContext(AuthContext)
 
    const handleLogout = () => {
       logout()
@@ -19,27 +17,37 @@ const Navbar = () => {
             <a className="btn btn-ghost normal-case text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 flex justify-center items-center mx-2">
 
-               <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Home</NavLink>
-               <NavLink to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Blog</NavLink>
-               {user ? <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')} onClick={handleLogout} >Logout</NavLink> : <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Login</NavLink>}
+               <NavLink
+                  to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
+               >
+                  Home
+               </NavLink>
+               <NavLink
+                  to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
+               >
+                  Blog
+               </NavLink>
 
-               {user && <> <li tabIndex={0}>
-                  <a>
-                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                           <img src={user && user.photoURL} />
-                        </div>
-                     </label>
-                  </a>
+               {user &&
+                  <> <li tabIndex={0}>
+                     <a>
+                        <label tabIndex={0} className="avatar">
+                           <div className="w-6 rounded-full">
+                              <img src={user && user.photoURL} />
+                           </div>
+                        </label>
+                     </a>
 
-                  <ul className="p-2 bg-base-100">
-                     <li><a>{user && user.displayName}</a></li>
-                  </ul>
-               </li>
+                     <ul className=" text-sm bg-base-100">
+                        <li><a><small>{user && user.displayName}</small></a></li>
+                     </ul>
+                  </li>
+                  </>}
 
-               </>}
+               {user ? <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')} onClick={handleLogout} >Logout</NavLink> :
+                  <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Login</NavLink>}
 
             </ul>
          </div>
