@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+import { FcLike } from 'react-icons/fc';
 
 
 
@@ -12,31 +13,21 @@ const ChefCard = ({ chef }) => {
 
    return (
 
-      <div className="card w-46  bg-base-100 shadow-md border">
-         <figure className="px-10 pt-10">
+      <div className="card w-3/4 bg-base-100 shadow-md border mx-auto">
+         <figure className="p-3 lg:p-5">
             <LazyLoad height={300} offset={300}>
                <img src={chefImg} />
             </LazyLoad>
-
-            {/* <img src={chefImg} /> */}
+            {/* <img className='w-80 h-80' src={chefImg} /> */}
          </figure>
-         <div className="card-body">
-            <h2 className="card-title">{chefName} </h2>
-            <p>Years of experience: {experience} </p>
-            <p>Numbers of recipes: {numberOfRecipe} </p>
-            <p>Likes: {totalLikes} </p>
-            {/* <Link to='details'>
-               <Button type="primary" danger>View Recipes</Button>
-            </Link> */}
-
+         <div className="flex flex-col justify-center items-center mb-5">
+            <h2 className="card-title mt-2">{chefName} </h2>
+            <p className='m-0'><span className='font-semibold'>Years of experience:</span> {experience} </p>
+            <p className='m-0'><span className='font-semibold'>Numbers of recipes:</span> {numberOfRecipe} </p>
+            <p className='mb-2 flex justify-center items-center gap-1'><span className='font-semibold'>Likes:</span> {totalLikes} <FcLike /> </p>
             <Link to={`/details/${chef.id}`}>
                <Button type="primary" danger>View Recipes</Button>
             </Link>
-
-            {/* <div className="card-actions">
-               <button className="btn btn-primary">View Recipes</button>
-               <Button type="primary">View Recipes</Button>
-            </div> */}
          </div>
       </div>
 

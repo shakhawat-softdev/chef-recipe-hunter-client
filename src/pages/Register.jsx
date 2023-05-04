@@ -20,17 +20,22 @@ const Register = () => {
       const password = form.password.value;
       const password1 = form.password1.value;
       const imageUrl = `${form.photoUrl.value}`
-      form.reset()
+
+
+      if (password.length < 6) {
+         setMessage('Please enter Password minimum six character');
+         return;
+      };
 
       if (password1 !== password) {
          setMessage("Password doesn't matched");
          return;
       }
 
-      if (password.length < 6) {
-         setMessage('Please enter Password minimum six character')
-      };
 
+
+
+      form.reset();
       registerUser(email, password)
 
          .then(result => {
@@ -73,7 +78,7 @@ const Register = () => {
                         <label className="label">
                            <span className="label-text">Your Name</span>
                         </label>
-                        <input type="text" name='name' placeholder="Your Name" className="input input-bordered" />
+                        <input type="text" name='name' required placeholder="Your Name" className="input input-bordered" />
                      </div>
                      <div className="form-control">
                         <label className="label">
@@ -99,12 +104,13 @@ const Register = () => {
                         </label>
                         <input type="text" placeholder="photo Url" name='photoUrl' className="input input-bordered" />
                      </div>
+                     <label className="label">
+                        <span className="label-text-alt text-red-600">{message}</span>
+                     </label>
                      <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
                      </div>
-                     <label className="label">
-                        <span className="label-text-alt">{message}</span>
-                     </label>
+
                      <label className="label">
                         <div className='label-text-alt'>
                            Alreadey have account? Please <Link to='/login'><span className="label-text-alt link link-hover"> login</span></Link>

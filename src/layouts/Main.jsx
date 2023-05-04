@@ -15,7 +15,7 @@ const Main = () => {
 
          {/* <div className='text-center'>{navigation.state === 'loading' && <Ring />}</div> */}
          <Outlet />
-         <Footer />
+         {/* <Footer /> */}
       </>
    );
 };

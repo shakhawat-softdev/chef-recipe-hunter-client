@@ -17,7 +17,7 @@ const Login = () => {
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
-      form.reset();
+
 
 
       sinInUser(email, password)
@@ -85,7 +85,7 @@ const Login = () => {
 
 
                         <label className="label">
-                           <span className="label-text-alt">{message}</span>
+                           <span className="label-text-alt text-red">{message}</span>
                         </label>
                      </div>
                      <div className="form-control mt-3">

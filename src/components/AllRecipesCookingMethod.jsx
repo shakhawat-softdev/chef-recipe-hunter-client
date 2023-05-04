@@ -40,7 +40,7 @@ const AllRecipesCookingMethod = ({ chef }) => {
    return (
       <>
 
-         <div className="card  bg-base-100 shadow-xl">
+         <div className="card bg-base-100 w-96 shadow-xl">
             <div className="card-body">
                <p className='font-bold'>Total Recipes: {recipes.length} </p>
                <div className="card-title bg-slate-300 p-4 rounded-md">All Recipes: {recipes.map((recepi, index) => <p key={index}><small>{recepi.name}</small></p>)} </div>

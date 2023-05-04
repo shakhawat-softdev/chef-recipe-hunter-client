@@ -11,39 +11,40 @@ import RecepiImgCard from '../components/RecepiImgCard';
 
 const Home = () => {
    const allChefs = useLoaderData()
-   // console.log(allChefs);
-   return (
-      <div className='w-full max-w-7xl mx-auto'>
-         <section>
 
+   return (
+      <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+
+         <section>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner1})`, height: '500px' }}>
                <div className="hero-overlay bg-opacity-60"></div>
                <div className="hero-content text-center text-neutral-content">
                   <div className="max-w-md">
                      <h1 className="mb-5 text-5xl font-bold">Meat Chicken</h1>
                      <p className="mb-5">Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</p>
-                     {/* <button class="btn btn-primary">Get Started</button> */}
+
                   </div>
                </div>
             </div>
          </section>
+
          {/* Section-1 Banner-1 End*/}
          <hr />
          {/* Section-2 Banner-2 Start*/}
-         <section className='flex flex-col justify-center items-center'>
-            <div className='w-full lg:flex flex flex-col justify-center items-center'>
+
+         {/* <section className='m-auto text-center'>
+            <div className='w-full mx-auto'>
                <div className='w-1/2'>
                   <img className='h-5/6' src={banner3} alt="" />
                </div>
                <div className='w-1/2'>
-                  <div className="card bg-base-100 ">
-                     <div className="card-body lg:items-center text-center">
+                  <div className="bg-base-100 ">
 
-                        <div className="card-title "><h1 className='text-3xl' ><span >Our Chef</span> <span className='font-bold'>Specialties</span></h1></div>
+                     <div className=" "><h1 className='text-3xl' ><span >Our Chef</span> <span className='font-bold'>Specialties</span></h1></div>
 
-                        <p className='mt-4'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></p>
-                     </div>
-                     <hr className='border ' />
+                     <p className='mt-4'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></p>
+
+                     <hr className='border' />
                   </div>
 
                   <div className='flex flex-col lg:flex-row gap-2 mt-5 justify-center items-center '>
@@ -72,9 +73,50 @@ const Home = () => {
                         </div>
                      </div>
                   </div>
+
                </div>
             </div>
-         </section>
+         </section> */}
+         <section className='m-auto my-5'>
+            <div className='w-full'>
+               <div className='w-full border '>
+                  <figure><img className='w-2/5 mx-auto' src={banner3} alt="Picture" /></figure>
+               </div>
+
+               <div className='text-center '>
+                  <h1 className='text-3xl mt-3' ><span >Our Chef</span><span className='font-bold'> Specialties</span></h1>
+                  <h3 className='leading-3 lg:leading-5'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></h3>
+               </div>
+            </div>
+
+            <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 mt-4'>
+               <div className='card shadow-md border border-red-300'>
+                  <div className='card-body items-center text-center '>
+                     <h2 className='card-title text-center'>Tacos  </h2>
+
+                  </div>
+               </div>
+               <div className='card shadow-md border border-red-300'>
+                  <div className='card-body items-center text-center'>
+                     <h2 className='card-title'>Chiles  </h2>
+
+                  </div>
+               </div>
+               <div className='card shadow-md border border-red-300'>
+                  <div className='card-body items-center text-center'>
+                     <h2 className='card-title'>Guacamole</h2>
+
+                  </div>
+               </div>
+               <div className='card shadow-md border border-red-300'>
+                  <div className='card-body items-center text-center '>
+                     <h2 className='card-title'>Enchiladas</h2>
+
+                  </div>
+               </div>
+            </div>
+
+         </section >
 
          <Space wrap className='flex justify-center items-start mx-1 mt-4'>
             <Button type="primary" danger>All</Button>
@@ -84,20 +126,32 @@ const Home = () => {
             <Button danger>Fast Food</Button>
             <Button danger>Drinks</Button>
          </Space>
+
          {/* Section-2 Banner-2 End*/}
 
 
          {/* Section-3 All Ches Start*/}
+
          <section>
-            <div className="card-title mt-10"><h1 className='text-3xl mx-auto text-center' ><span >Our Available</span> <span className='font-bold'>Chefs</span></h1></div>
-            <div className='grid grid-cols-3 gap-2'>
+            <div className="card-title mt-10">
+               <h1 className='text-3xl mx-auto text-center' ><span >Our Available</span> <span className='font-bold'>Chefs</span></h1>
+            </div>
+            <div className="divider"></div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-2'>
                {allChefs.map(chef => <ChefCard chef={chef} key={chef.id} />)}
             </div>
+
          </section>
+
          {/* Section-3 All Ches End*/}
 
          <section>
-            <h1 className='text-center text-2xl bg-slate-200 text-black my-5 p-5 rounded-md '>Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</h1>
+            {/* <h1 className='text-center text-2xl bg-slate-200 text-black my-5 p-5 rounded-md '>Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</h1> */}
+            <div className="card-title mt-10">
+               <h1 className='text-3xl mx-auto text-center' ><span >Refreshmenal</span> <span className='font-bold'>Zone</span></h1>
+            </div>
+            <div className="divider"></div>
 
             <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-10'>
                <div className='w-1/2'>
@@ -143,16 +197,15 @@ const Home = () => {
          </section>
 
 
-         <section className='mb-10'>
+         {/* <section className='mb-10'>
             <div className="card-title mt-10"><h1 className='text-3xl mx-auto text-center' ><span >Our Available</span> <span className='font-bold'>Signature Items</span></h1></div>
             <div className="divider mb-6"></div>
             <div className='grid grid-cols-4 gap-2'>
-
                {allChefs.map(data => <RecepiImgCard data={data} key={data.id} />)}
-
             </div>
-         </section>
-      </div>
+         </section> */}
+
+      </div >
    );
 };
 
