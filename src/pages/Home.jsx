@@ -27,56 +27,8 @@ const Home = () => {
                </div>
             </div>
          </section>
-
-         {/* Section-1 Banner-1 End*/}
          <hr />
-         {/* Section-2 Banner-2 Start*/}
 
-         {/* <section className='m-auto text-center'>
-            <div className='w-full mx-auto'>
-               <div className='w-1/2'>
-                  <img className='h-5/6' src={banner3} alt="" />
-               </div>
-               <div className='w-1/2'>
-                  <div className="bg-base-100 ">
-
-                     <div className=" "><h1 className='text-3xl' ><span >Our Chef</span> <span className='font-bold'>Specialties</span></h1></div>
-
-                     <p className='mt-4'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></p>
-
-                     <hr className='border' />
-                  </div>
-
-                  <div className='flex flex-col lg:flex-row gap-2 mt-5 justify-center items-center '>
-                     <div className='card shadow-md border border-red-300'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Tacos  </h2>
-
-                        </div>
-                     </div>
-                     <div className='card shadow-md border border-red-300'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Chiles  </h2>
-
-                        </div>
-                     </div>
-                     <div className='card shadow-md border border-red-300'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Guacamole</h2>
-
-                        </div>
-                     </div>
-                     <div className='card shadow-md border border-red-300'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Enchiladas</h2>
-
-                        </div>
-                     </div>
-                  </div>
-
-               </div>
-            </div>
-         </section> */}
          <section className='m-auto my-5'>
             <div className='w-full'>
                <div className='w-full border '>
@@ -88,7 +40,6 @@ const Home = () => {
                   <h3 className='leading-3 lg:leading-5'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></h3>
                </div>
             </div>
-
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 mt-4'>
                <div className='card shadow-md border border-red-300'>
                   <div className='card-body items-center text-center '>
@@ -115,7 +66,6 @@ const Home = () => {
                   </div>
                </div>
             </div>
-
          </section >
 
          <Space wrap className='flex justify-center items-start mx-1 mt-4'>
@@ -127,10 +77,6 @@ const Home = () => {
             <Button danger>Drinks</Button>
          </Space>
 
-         {/* Section-2 Banner-2 End*/}
-
-
-         {/* Section-3 All Ches Start*/}
 
          <section>
             <div className="card-title mt-10">
@@ -144,66 +90,62 @@ const Home = () => {
 
          </section>
 
-         {/* Section-3 All Ches End*/}
+         <div className="divider mb-3 lg:mb-6"></div>
 
-         <section>
-            {/* <h1 className='text-center text-2xl bg-slate-200 text-black my-5 p-5 rounded-md '>Meet our master chef, who combines traditional techniques with modern flavors to create culinary magic.</h1> */}
-            <div className="card-title mt-10">
-               <h1 className='text-3xl mx-auto text-center' ><span >Refreshmenal</span> <span className='font-bold'>Zone</span></h1>
-            </div>
-            <div className="divider"></div>
+         <section className='m-auto my-5'>
+            <div className='w-full lg:flex flex-row-reverse gap-5'>
+               <div className='w-full text-center '>
+                  <figure><img className=' mx-auto' src={place} alt="Picture" /></figure>
+               </div>
 
-            <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-10'>
-               <div className='w-1/2'>
-                  <div className="card bg-base-100 ">
-                     <div className="card-body items-center text-center">
-                        <div className="card-title "><h1 className='text-3xl' ><span >Event</span> <span className='font-bold'>package </span></h1></div>
-                        <p className='mt-4'><small>At our restaurant, we pride ourselves on providing exceptional service to every guest who walks through our doors. From the moment you arrive, our friendly and professional staff will make you feel welcome and ensure that your dining experience is nothing short of outstanding.</small></p>
-                        <p><small>Our attentive waitstaff will guide you through our menu, answering any questions you may have and making recommendations based on your preferences. They'll take your order promptly and accurately, ensuring that any special requests or dietary restrictions are accommodated.</small></p>
-                     </div>
-                     <div className="divider"></div>
+               <div className=' bg-slate-100 mt-3 lg:mt-0 lg:p-5 rounded-md boder border-red-200'>
+                  <div className='text-center  '>
+                     <h1 className='text-3xl lg:mt-3' ><span >Event</span><span className='font-bold'> package</span></h1>
+                     <div className="divider mb-3 lg:mb-6"></div>
+                     <h3 className='leading-3 lg:leading-5'><small>Our website is dedicated to celebrating the art and craft of cooking and the talented chefs who create culinary masterpieces. From classic French cuisine to contemporary fusion dishes, we showcase the work of chefs from all over the world, offering insights into their unique styles, techniques, and philosophies. Our articles, interviews, and recipes inspire food lovers of all levels to explore new flavors and experiment in the kitchen. Whether you're a professional chef or a home cook, our website is the ultimate destination for discovering the joys of gastronomy.</small></h3>
                   </div>
-                  <div className='flex flex-col lg:flex-row gap-2 w-full mt-5 justify-center items-center'>
-                     <div className='card shadow-lg'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Date Night Package </h2>
+
+                  <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 mt-4'>
+                     <div className='card shadow-md border border-red-300'>
+                        <div className='card-body items-center text-center '>
+                           <h2 className='card-title text-center'>Date Night Package  </h2>
 
                         </div>
                      </div>
-                     <div className='card shadow-lg'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Family Feast Package </h2>
+                     <div className='card shadow-md border border-red-300'>
+                        <div className='card-body items-center text-center'>
+                           <h2 className='card-title'>Family Feast Package</h2>
 
                         </div>
                      </div>
-                     <div className='card shadow-lg'>
-                        <div className='card-body '>
+                     <div className='card shadow-md border border-red-300'>
+                        <div className='card-body items-center text-center'>
                            <h2 className='card-title'>Happy Hour Package</h2>
 
                         </div>
                      </div>
-                     <div className='card shadow-lg'>
-                        <div className='card-body '>
-                           <h2 className='card-title'>Catering Package </h2>
+                     <div className='card shadow-md border border-red-300'>
+                        <div className='card-body items-center text-center '>
+                           <h2 className='card-title'>Catering Package</h2>
 
                         </div>
                      </div>
                   </div>
                </div>
-               <div className='w-3/5'>
-                  <img className='h-5/6' src={place} alt="" />
-               </div>
+
             </div>
-         </section>
 
 
-         {/* <section className='mb-10'>
+         </section >
+
+
+         <section className='mb-10'>
             <div className="card-title mt-10"><h1 className='text-3xl mx-auto text-center' ><span >Our Available</span> <span className='font-bold'>Signature Items</span></h1></div>
             <div className="divider mb-6"></div>
-            <div className='grid grid-cols-4 gap-2'>
+            <div className='lg:grid grid-cols-4 gap-2'>
                {allChefs.map(data => <RecepiImgCard data={data} key={data.id} />)}
             </div>
-         </section> */}
+         </section>
 
       </div >
    );

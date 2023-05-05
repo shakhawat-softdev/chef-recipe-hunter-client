@@ -1,17 +1,12 @@
 import React from 'react';
 import banner from '../../public/images/banner.jpg'
 import { useLoaderData } from 'react-router-dom';
-
-
-
 import AllRecipesCookingMethod from '../components/AllRecipesCookingMethod';
 
 
 const ChefRecipeDetails = () => {
    const [chef] = useLoaderData();
-
    console.log(chef)
-
    const { chefName, chefImg, experience, totalLikes, numberOfRecipe, chefInfo, signatureRecipes, recipeDetails } = chef;
    const { recipeImg, description, ingredients } = recipeDetails;
 
@@ -19,8 +14,6 @@ const ChefRecipeDetails = () => {
    return (
       <>
          <section>
-
-
             <div className="card lg:card-side bg-base-100 shadow-md border border-x-red-300 m-10 p-5">
                <figure><img className='w-2/3' src={chefImg} /></figure>
                <div className="card-body">

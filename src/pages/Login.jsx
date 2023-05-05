@@ -66,44 +66,47 @@ const Login = () => {
 
    return (
       <>
-         <div className='flex justify-center items-center'>
-            <div >
-               <h1 className="text-3xl font-bold my-3 ml-10">Login now!</h1>
-               <form onSubmit={handleLogin} className="card flex-shrink-0 w-96 max-w-sm hadow-md border border-sky-300 bg-base-100 my-5">
-                  <div className="card-body">
-                     <div className="form-control">
-                        <label className="label">
-                           <span className="label-text">Email</span>
-                        </label>
-                        <input type="text" name='email' required placeholder="email" className="input input-bordered" />
+         <h1 className="text-3xl font-bold my-3 ml-4 text-center">Login now!</h1>
+         <div className='flex justify-center items-center text-center'>
+            <section className="card flex-shrink-0 w-96 max-w-sm hadow-md border border-sky-300 bg-base-100 ">
+               <div className='card-body'>
+                  <form onSubmit={handleLogin} >
+                     <div className="">
+                        <div className="form-control">
+                           <label className="label">
+                              <span className="label-text">Email</span>
+                           </label>
+                           <input type="text" name='email' required placeholder="email" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                           <label className="label">
+                              <span className="label-text">Password</span>
+                           </label>
+                           <input type="password" name='password' required placeholder="password" className="input input-bordered" />
+
+                           <label className="label">
+                              <span className="label-text-alt text-red">{message}</span>
+                           </label>
+                        </div>
+                        <div className="form-control mt-3">
+                           <button className="btn btn-primary">Login</button>
+                        </div>
                      </div>
-                     <div className="form-control">
-                        <label className="label">
-                           <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" name='password' required placeholder="password" className="input input-bordered" />
+                  </form>
+                  <div className="divider">OR</div>
 
+                  <button className="btn btn-active btn-success" onClick={handleGoogleLogin}> <FcGoogle className='text-3xl mr-2' /> Login with Google</button>
 
-                        <label className="label">
-                           <span className="label-text-alt text-red">{message}</span>
-                        </label>
-                     </div>
-                     <div className="form-control mt-3">
-                        <button className="btn btn-primary">Login</button>
-                     </div>
-                     <div className="divider">OR</div>
+                  <button className="btn btn-active btn-success" onClick={handleGithubLogin} ><FaGithub className='text-3xl mr-2' />Login with Github</button>
 
-                     <button className="btn btn-active btn-success" onClick={handleGoogleLogin}> <FcGoogle className='text-3xl mr-2' /> Login with Google</button>
+                  <label className="label">
+                     <p className='label-text-alt'>Haven't account? Please <Link to='/register'><span className="label-text-alt link link-hover">register</span></Link>
+                     </p>
+                  </label>
+               </div>
 
-                     <button className="btn btn-active btn-success" onClick={handleGithubLogin} ><FaGithub className='text-3xl mr-2' />Login with Github</button>
+            </section>
 
-                     <label className="label">
-                        <p className='label-text-alt'>Haven't account? Please <Link to='/register'><span className="label-text-alt link link-hover">register</span></Link>
-                        </p>
-                     </label>
-                  </div>
-               </form>
-            </div>
          </div>
 
 

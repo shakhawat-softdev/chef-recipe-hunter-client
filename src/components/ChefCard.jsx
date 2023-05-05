@@ -18,7 +18,7 @@ const ChefCard = ({ chef }) => {
             <LazyLoad height={300} offset={300}>
                <img src={chefImg} />
             </LazyLoad>
-            {/* <img className='w-80 h-80' src={chefImg} /> */}
+
          </figure>
          <div className="flex flex-col justify-center items-center mb-5">
             <h2 className="card-title mt-2">{chefName} </h2>

@@ -40,51 +40,53 @@ const AllRecipesCookingMethod = ({ chef }) => {
    return (
       <>
 
-         <div className="card bg-base-100 w-96 shadow-xl">
+         <div className="card bg-base-100 shadow-xl">
             <div className="card-body">
-               <p className='font-bold'>Total Recipes: {recipes.length} </p>
-               <div className="card-title bg-slate-300 p-4 rounded-md">All Recipes: {recipes.map((recepi, index) => <p key={index}><small>{recepi.name}</small></p>)} </div>
+               <p className='font-bold text-center'>Total Recipes: {recipes.length} </p>
+               <section className='border border-solid border-red-900'>
+                  <div className="card-title bg-slate-300 m-4 p-4 rounded-md ">All Recipes: {recipes.map((recepi, index) => <p key={index}><small>{recepi.name}</small></p>)} </div>
 
-               <div className='grid grid-cols-3 gap-3'>
-                  <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline '>1. Recipe name:</h1> {recepiName1} </div>
-                     <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient1.map(procedure => procedure)} </div>
+                  <div className='grid grid-cols-3 gap-3 m-4 border border-solid border-teal-400 p-5'>
+                     <div className='bg-gray-200 p-4 rounded'>
+                        <div className='mb-3'> <h1 className='font-bold inline '>1. Recipe name:</h1> {recepiName1} </div>
+                        <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient1.map(procedure => procedure)} </div>
+                     </div>
+
+                     <div className='bg-gray-200 p-4 rounded'>
+                        <div className='mb-3' > <h1 className='font-bold inline'>2. Recipe name:</h1> {recepiName2} </div>
+                        <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient2.map(procedure => procedure)} </div>
+                     </div>
+
+                     <div className='bg-gray-200 p-4 rounded'>
+                        <div className='mb-3'> <h1 className='font-bold inline'>3. Recipe name:</h1> {recepiName3} </div>
+                        <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient3.map(procedure => procedure)} </div>
+                     </div>
+
+                     <div className='bg-gray-200 p-4 rounded'>
+                        <div className='mb-3'> <h1 className='font-bold inline'>4. Recipe name:</h1> {recepiName4} </div>
+                        <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient4.map(procedure => procedure)} </div>
+                     </div>
+
+                     <div className='bg-gray-200 p-4 rounded'>
+                        <div className='mb-3'> <h1 className='font-bold inline'>4. Recipes name:</h1> {recepiName5} </div>
+                        <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient5.map(procedure => procedure)} </div>
+                     </div>
                   </div>
+                  <div className='bg-green-500 p-3  m-4 rounded text-center' > <div className='font-bold inline text-center'>Cooking method:</div> {cookingMethod.map((details, index) => <div key={index}>{details}</div>)} </div>
 
-                  <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3' > <h1 className='font-bold inline'>2. Recipe name:</h1> {recepiName2} </div>
-                     <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient2.map(procedure => procedure)} </div>
+                  <div className='m-4 text-center'>
+                     <div className='flex justify-center items-center'>
+                        <h1 className='font-bold inline '>{rating}</h1>
+                        <StarIcon className='h-5 w-5 text-yellow-300 ' />
+                        <StarIcon className='h-5 w-5 text-yellow-300' />
+                        <StarIcon className='h-5 w-5 text-yellow-300' />
+                        <StarIcon className='h-5 w-5 text-yellow-300' />
+                     </div>
+
+                     <Button danger className='w-1/6 my-2 ' disabled={!showBtn} onClick={notify} > <BookmarkIcon className='h-5 w-5 inline mr-1' /> Add to favorite</Button>
+
                   </div>
-
-                  <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>3. Recipe name:</h1> {recepiName3} </div>
-                     <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient3.map(procedure => procedure)} </div>
-                  </div>
-
-                  <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recipe name:</h1> {recepiName4} </div>
-                     <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient4.map(procedure => procedure)} </div>
-                  </div>
-
-                  <div className='bg-gray-200 p-4 rounded'>
-                     <div className='mb-3'> <h1 className='font-bold inline'>4. Recipes name:</h1> {recepiName5} </div>
-                     <div><h1 className='font-bold inline'>ingredients:</h1> {ingredient5.map(procedure => procedure)} </div>
-                  </div>
-               </div>
-               <div className='bg-green-500 p-3 rounded' > <div className='font-bold inline'>Cooking method:</div> {cookingMethod.map((details, index) => <div key={index}>{details}</div>)} </div>
-
-               <div>
-                  <div className='flex justify-start items-center'>
-                     <h1 className='font-bold inline '>{rating}</h1>
-                     <StarIcon className='h-5 w-5 text-yellow-300 ' />
-                     <StarIcon className='h-5 w-5 text-yellow-300' />
-                     <StarIcon className='h-5 w-5 text-yellow-300' />
-                     <StarIcon className='h-5 w-5 text-yellow-300' />
-                  </div>
-
-                  <Button danger className='w-1/6 my-2 ' disabled={!showBtn} onClick={notify} > <BookmarkIcon className='h-5 w-5 inline mr-1' /> Add to favorite</Button>
-
-               </div>
+               </section>
             </div>
          </div >
          <Toaster />

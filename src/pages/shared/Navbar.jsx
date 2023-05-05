@@ -14,10 +14,10 @@ const Navbar = () => {
    return (
       <div className="navbar bg-blue-100 w-full max-w-7xl mx-auto">
          <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-md lg:text-xl">Chef Master</a>
+            <a className="btn btn-ghost normal-case text-xl lg:text-xl">Chef Master</a>
          </div>
          <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 flex justify-center items-center gap-2">
+            <ul className=" menu menu-horizontal px-1 flex justify-center items-center gap-2">
                {user &&
                   <> <li tabIndex={0}>
                      <a>
@@ -35,20 +35,21 @@ const Navbar = () => {
                   </>}
 
                <NavLink
-                  to='/' className={({ isActive }) => (isActive ? 'btn btn-error" text-yellow-500' : 'btn')}
+                  to='/' className={({ isActive }) => (isActive ? 'btn btn-active btn-link decoration-blue-100 text-blue-800  ' : 'btn btn-active btn-link decoration-blue-100 text-black')}
                >
                   Home
                </NavLink>
                <NavLink
-                  to='/blog' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}
+                  to='/blog' className={({ isActive }) => (isActive ? 'btn btn-active btn-link decoration-blue-100 text-blue-800  ' : 'btn btn-active btn-link decoration-blue-100 text-black')}
                >
                   Blog
                </NavLink>
 
 
 
-               {user ? <NavLink to='/' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')} onClick={handleLogout} >Logout</NavLink> :
-                  <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn text-yellow-500' : 'btn')}> Login</NavLink>}
+               {user ? <NavLink to='/' className='btn btn-active btn-link decoration-blue-100 text-black' onClick={handleLogout} >Logout</NavLink> :
+
+                  <NavLink to='/login' className={({ isActive }) => (isActive ? 'btn btn-active btn-link decoration-blue-100 text-blue-800  ' : 'btn btn-active btn-link decoration-blue-100 text-black')}> Login</NavLink>}
 
             </ul>
          </div>
